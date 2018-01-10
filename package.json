@@ -1,15 +1,22 @@
 
 {
   "name": "react-native-home-indicator",
-  "version": "0.1.0",
-  "description": "A <PrefersHomeIndicatorAutoHidden /> component for react-native",
+  "version": "0.1.3",
+  "description": "A declarative approach for hiding the iPhone X Home Indicator in react-native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "Home Indicator",
+    "prefersHomeIndicatorAutoHidden",
+    "iphoneX"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flowkey/react-native-home-indicator"
+  },
   "author": "flowkey.com",
   "contributors": [
     {
