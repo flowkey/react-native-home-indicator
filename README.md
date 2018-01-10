@@ -14,7 +14,7 @@ follow the [manual linking steps](http://facebook.github.io/react-native/docs/li
 
 ```objective-c
 // add to your imports
-#import <RNHomeIndicator.h>`
+#import <RNHomeIndicator.h>
 ```
 
 ```objective-c
