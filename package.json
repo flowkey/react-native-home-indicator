@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-home-indicator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A declarative approach for hiding the iPhone X Home Indicator in react-native",
   "main": "index.js",
   "scripts": {
