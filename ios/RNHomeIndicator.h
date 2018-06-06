@@ -12,7 +12,5 @@
 @property BOOL prefersAutoHidden;
 @end
 
-@interface RNHomeIndicator : NSObject <RCTBridgeModule>
+@interface HomeIndicatorManager : NSObject <RCTBridgeModule>
 @end
-
-  

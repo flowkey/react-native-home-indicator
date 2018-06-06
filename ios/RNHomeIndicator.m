@@ -10,7 +10,7 @@
 @end
 
 
-@implementation RNHomeIndicator
+@implementation HomeIndicatorManager
 
 - (id) init {
     [self setPrefersAutoHidden:NO];
@@ -45,15 +45,8 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(alwaysVisible) {
-    [self setPrefersAutoHidden:NO];
-}
-
-RCT_EXPORT_METHOD(autoHidden) {
-    [self setPrefersAutoHidden:YES];
+RCT_EXPORT_METHOD(setHidden:(BOOL)hidden) {
+    [self setPrefersAutoHidden:hidden];
 }
 
 @end
-
-
-  
