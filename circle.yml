@@ -17,6 +17,4 @@ jobs:
           key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
 
       - run: npm run test
-
-      - store_test_results:
-          path: ~/project/junit.xml
+      - run: npm run eslint
