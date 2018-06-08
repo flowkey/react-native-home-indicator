@@ -39,6 +39,12 @@ describe('react-native-home-indicator', () => {
         expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
     })
 
+    test('test fallback when no prop is provided', () => {
+        renderer.create(<HomeIndicator />)
+        expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
+        expect(RNHomeIndicator.alwaysVisible).toHaveBeenCalled()
+    })
+
     test('test propsHistory', () => {
         renderer.create(
             <View>

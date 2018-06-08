@@ -30,7 +30,7 @@ export class HomeIndicator extends Component {
     componentWillUnmount() {
         if (!isIos) return
 
-        const { autoHidden = false } = HomeIndicator.popAndGetPreviousProps()
+        const { autoHidden } = HomeIndicator.popAndGetPreviousProps()
         updateNativeHomeIndicator({ autoHidden })
     }
 
@@ -39,7 +39,7 @@ export class HomeIndicator extends Component {
 
 HomeIndicator.propTypes = propTypes
 
-function updateNativeHomeIndicator({ autoHidden }) {
+function updateNativeHomeIndicator({ autoHidden = false }) {
     if (autoHidden) {
         RNHomeIndicator.autoHidden()
     } else {
