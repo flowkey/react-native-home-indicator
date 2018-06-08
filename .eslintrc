@@ -1,4 +1,4 @@
-module.exports = {
+{
     "env": {
         "browser": true,
         "es6": true,
@@ -47,7 +47,7 @@ module.exports = {
         "quotes": [2, "single", { "avoidEscape": true }],
         "semi": [
             "error",
-            "always"
+            "never"
         ]
     }
-};
+}

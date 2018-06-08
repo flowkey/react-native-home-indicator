@@ -1,6 +1,6 @@
 {
   "name": "react-native-home-indicator",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "A declarative approach for hiding the iPhone X Home Indicator in react-native",
   "main": "index.js",
   "scripts": {
@@ -39,12 +39,10 @@
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
     "react-native": "^0.55.4",
-    "react-test-renderer": "^16.4.0"
+    "react-test-renderer": "^16.4.0",
+    "react": "^16.4.0"
   },
   "jest": {
     "preset": "react-native"
-  },
-  "dependencies": {
-    "react": "^16.4.0"
   }
 }
