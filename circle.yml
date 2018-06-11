@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:8
+    steps:
+      - checkout
+      - restore_cache:
+          key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
+
+      - run: npm i
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
+
+      - run: npm run test
+      - run: npm run eslint

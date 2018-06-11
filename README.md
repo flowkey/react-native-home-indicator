@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/react-native-home-indicator.svg)](https://badge.fury.io/js/react-native-home-indicator)
+[![CircleCI](https://circleci.com/gh/flowkey/react-native-home-indicator.svg?style=svg)](https://circleci.com/gh/flowkey/react-native-home-indicator)
 
 A declarative approach for hiding the iPhone X Home Indicator in react-native.
 
@@ -28,7 +29,11 @@ UIViewController *rootViewController = [HomeIndicatorViewController new];
 ```
 
 
-## Usage
+## Simple Usage
+
+Render `<PrefersHomeIndicatorAutoHidden />` to signal your preference for hiding the Home Indicator. 
+"The system takes your preference into account, but returning true is no guarantee that the indicator will be hidden." 
+see [developer.apple.com/documentation](https://developer.apple.com/documentation/uikit/uiviewcontroller/2887510-prefershomeindicatorautohidden)
 
 ```jsx
 ...
@@ -44,7 +49,24 @@ const SomeReactNativeComponent = () => {
 }
 ```
 
-Render `<PrefersHomeIndicatorAutoHidden />` to signal your preference for hiding the Home Indicator. 
-"The system takes your preference into account, but returning true is no guarantee that the indicator will be hidden." 
+## Extended Usage
 
-see [developer.apple.com/documentation](https://developer.apple.com/documentation/uikit/uiviewcontroller/2887510-prefershomeindicatorautohidden)
+For more complex usage you can use the `HomeIndicator` component which allows passing your preferred
+indicator setting as prop. Its even possible to override previous rendered indicator preferences as
+you can see in the following example.
+
+```jsx
+...
+import { HomeIndicator } from 'react-native-home-indicator';
+
+const SomeReactNativeComponent = () => {
+    return (
+        <View>
+            <HomeIndicator autoHidden />
+            <SomeDeepComponentTree>
+                 <HomeIndicator autoHidden={false} />
+            </SomeDeepComponentTree>
+        </View>
+    );
+}
+```
