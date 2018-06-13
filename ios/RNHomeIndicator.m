@@ -7,6 +7,10 @@
     return self.prefersAutoHidden;
 }
 
+- (UIRectEdge)preferredScreenEdgesDeferringSystemGestures {
+	return UIRectEdgeBottom;
+}
+
 @end
 
 
@@ -14,6 +18,7 @@
 
 - (id) init {
     [self setPrefersAutoHidden:NO];
+	[self setRequireDoubleSwipe:NO];
     return [super init];
 }
 
@@ -24,6 +29,13 @@
     if (@available(iOS 11.0, *)) {
         [rootViewController setNeedsUpdateOfHomeIndicatorAutoHidden];
     }
+}
+
+- setRequireDoubleSwipe: (BOOL) newValue {
+	HomeIndicatorViewController *rootViewController = [self getHomeIndicatorViewController];
+
+	rootViewController.requireDoubleSwipe = newValue;
+	[rootViewController setNeedsUpdateOfScreenEdgesDeferringSystemGestures];
 }
 
 - (HomeIndicatorViewController*) getHomeIndicatorViewController {
@@ -51,6 +63,14 @@ RCT_EXPORT_METHOD(alwaysVisible) {
 
 RCT_EXPORT_METHOD(autoHidden) {
     [self setPrefersAutoHidden:YES];
+}
+
+RCT_EXPORT_METHOD(requireSingleSwipe) {
+	[self setRequireDoubleSwipe:NO];
+}
+
+RCT_EXPORT_METHOD(requireDoubleSwipe) {
+	[self setRequireDoubleSwipe:YES];
 }
 
 @end

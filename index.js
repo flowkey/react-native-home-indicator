@@ -8,6 +8,7 @@ const isIos = Platform.OS === 'ios'
 
 const propTypes = {
     autoHidden: PropTypes.bool.isRequired,
+    requireDoubleSwipe: PropTypes.bool,
 }
 
 export class HomeIndicator extends Component {
@@ -21,17 +22,17 @@ export class HomeIndicator extends Component {
     componentDidMount() {
         if (!isIos) return
 
-        const { autoHidden } = this.props
+        const { autoHidden, requireDoubleSwipe } = this.props
         HomeIndicator.propsHistory.push(this.props)
 
-        updateNativeHomeIndicator({ autoHidden })
+        updateNativeHomeIndicator({ autoHidden, requireDoubleSwipe })
     }
 
     componentWillUnmount() {
         if (!isIos) return
 
-        const { autoHidden } = HomeIndicator.popAndGetPreviousProps()
-        updateNativeHomeIndicator({ autoHidden })
+        const { autoHidden, requireDoubleSwipe } = HomeIndicator.popAndGetPreviousProps()
+        updateNativeHomeIndicator({ autoHidden, requireDoubleSwipe })
     }
 
     render() { return null }
@@ -39,11 +40,16 @@ export class HomeIndicator extends Component {
 
 HomeIndicator.propTypes = propTypes
 
-function updateNativeHomeIndicator({ autoHidden = false }) {
+function updateNativeHomeIndicator({ autoHidden = false, requireDoubleSwipe = false }) {
     if (autoHidden) {
         RNHomeIndicator.autoHidden()
     } else {
         RNHomeIndicator.alwaysVisible()
+    }
+    if (requireDoubleSwipe) {
+        RNHomeIndicator.requireDoubleSwipe()
+    } else {
+        RNHomeIndicator.requireSingleSwipe()
     }
 }
 

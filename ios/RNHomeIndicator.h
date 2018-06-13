@@ -10,6 +10,7 @@
 
 @interface HomeIndicatorViewController : UIViewController
 @property BOOL prefersAutoHidden;
+@property BOOL requireDoubleSwipe;
 @end
 
 @interface RNHomeIndicator : NSObject <RCTBridgeModule>
