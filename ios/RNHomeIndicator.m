@@ -8,7 +8,7 @@
 }
 
 - (UIRectEdge)preferredScreenEdgesDeferringSystemGestures {
-	return UIRectEdgeBottom;
+	return self.requireDoubleSwipe ? UIRectEdgeBottom : UIRectEdgeNone;
 }
 
 @end
@@ -31,11 +31,13 @@
     }
 }
 
-- setRequireDoubleSwipe: (BOOL) newValue {
+- (void) setRequireDoubleSwipe: (BOOL) newValue {
 	HomeIndicatorViewController *rootViewController = [self getHomeIndicatorViewController];
 
 	rootViewController.requireDoubleSwipe = newValue;
-	[rootViewController setNeedsUpdateOfScreenEdgesDeferringSystemGestures];
+    if (@available(iOS 11.0, *)) {
+	    [rootViewController setNeedsUpdateOfScreenEdgesDeferringSystemGestures];
+    }
 }
 
 - (HomeIndicatorViewController*) getHomeIndicatorViewController {
