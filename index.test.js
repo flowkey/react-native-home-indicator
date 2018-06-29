@@ -24,22 +24,22 @@ describe('react-native-home-indicator', () => {
         RNHomeIndicator.alwaysVisible.mockReset()
     })
 
-    test('test hide native indicator when mounting PrefersHomeIndicatorAutoHidden', () => {
+    test('hide native indicator when mounting PrefersHomeIndicatorAutoHidden', () => {
         renderer.create(<PrefersHomeIndicatorAutoHidden />)
         expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
     })
 
-    test('test hide native indicator when mounting HomeIndicator with autoHidden=true', () => {
+    test('hide native indicator when mounting HomeIndicator with autoHidden=true', () => {
         renderer.create(<HomeIndicator autoHidden />)
         expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
     })
 
-    test('test hide native indicator when mounting HomeIndicator with autoHidden=false', () => {
+    test('hide native indicator when mounting HomeIndicator with autoHidden=false', () => {
         renderer.create(<HomeIndicator autoHidden={false} />)
         expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
     })
 
-    test('test show indicator when unmounting PrefersHomeIndicatorAutoHidden', () => {
+    test('show indicator when unmounting PrefersHomeIndicatorAutoHidden', () => {
         const component = renderer.create(<PrefersHomeIndicatorAutoHidden />)
         expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
 
@@ -47,13 +47,22 @@ describe('react-native-home-indicator', () => {
         expect(RNHomeIndicator.alwaysVisible).toHaveBeenCalled()
     })
 
-    test('test fallback when no prop is provided', () => {
+    test('dont hide native indicator when another instance is currently rendered', () => {
+        renderer.create(<PrefersHomeIndicatorAutoHidden />)
+        const secondTree = renderer.create(<PrefersHomeIndicatorAutoHidden />)
+
+        secondTree.unmount()
+
+        expect(RNHomeIndicator.alwaysVisible).not.toHaveBeenCalled()
+    })
+
+    test('fallback when no prop is provided', () => {
         renderer.create(<HomeIndicator />)
         expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
         expect(RNHomeIndicator.alwaysVisible).toHaveBeenCalled()
     })
 
-    test('test propsHistory', () => {
+    test('propsHistory', () => {
         renderer.create(
             <View>
                 <HomeIndicator autoHidden={false} />
@@ -71,7 +80,7 @@ describe('react-native-home-indicator', () => {
         ])
     })
 
-    test('test popAndGetPreviousProps', () => {
+    test('popAndGetPreviousProps', () => {
         renderer.create(
             <View>
                 <HomeIndicator autoHidden={false} />
