@@ -17,7 +17,7 @@ import { NativeModules, View } from 'react-native'
 
 const { RNHomeIndicator } = NativeModules
 
-describe('react-native-home-indicator', () => {
+describe('test react-native-home-indicator', () => {
     beforeEach(() => {
         HomeIndicator.propsHistory = []
         RNHomeIndicator.autoHidden.mockReset()
