@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/react-native-home-indicator.svg)](https://badge.fury.io/js/react-native-home-indicator)
 [![CircleCI](https://circleci.com/gh/flowkey/react-native-home-indicator.svg?style=svg)](https://circleci.com/gh/flowkey/react-native-home-indicator)
+[![codecov](https://codecov.io/gh/flowkey/react-native-home-indicator/branch/master/graph/badge.svg)](https://codecov.io/gh/flowkey/react-native-home-indicator)
 
 A declarative approach for hiding the iPhone X Home Indicator in react-native.
 
