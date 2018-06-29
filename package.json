@@ -4,7 +4,7 @@
   "description": "A declarative approach for hiding the iPhone X Home Indicator in react-native",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "test-watch": "jest --watch",
     "eslint": "eslint ."
   },
