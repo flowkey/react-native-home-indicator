@@ -24,20 +24,7 @@ describe('test react-native-home-indicator', () => {
         RNHomeIndicator.alwaysVisible.mockReset()
     })
 
-    test('hide native indicator when mounting PrefersHomeIndicatorAutoHidden', () => {
-        renderer.create(<PrefersHomeIndicatorAutoHidden />)
-        expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
-    })
-
-    test('hide native indicator when mounting HomeIndicator with autoHidden=true', () => {
-        renderer.create(<HomeIndicator autoHidden />)
-        expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
-    })
-
-    test('hide native indicator when mounting HomeIndicator with autoHidden=false', () => {
-        renderer.create(<HomeIndicator autoHidden={false} />)
-        expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
-    })
+  
 
     test('show indicator when unmounting PrefersHomeIndicatorAutoHidden', () => {
         const component = renderer.create(<PrefersHomeIndicatorAutoHidden />)
