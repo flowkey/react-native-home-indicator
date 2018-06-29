@@ -39,6 +39,14 @@ describe('react-native-home-indicator', () => {
         expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
     })
 
+    test('test show indicator when unmounting PrefersHomeIndicatorAutoHidden', () => {
+        const component = renderer.create(<PrefersHomeIndicatorAutoHidden />)
+        expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
+
+        component.unmount()
+        expect(RNHomeIndicator.alwaysVisible).toHaveBeenCalled()
+    })
+
     test('test fallback when no prop is provided', () => {
         renderer.create(<HomeIndicator />)
         expect(RNHomeIndicator.autoHidden).not.toHaveBeenCalled()
