@@ -8,6 +8,7 @@
 node_modules/
 npm-debug.log
 yarn-error.log
+coverage
   
 
 # Xcode
@@ -35,4 +36,3 @@ project.xcworkspace
 buck-out/
 \.buckd/
 *.keystore
-      
