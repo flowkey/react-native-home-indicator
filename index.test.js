@@ -24,8 +24,6 @@ describe('test react-native-home-indicator', () => {
         RNHomeIndicator.alwaysVisible.mockReset()
     })
 
-  
-
     test('show indicator when unmounting PrefersHomeIndicatorAutoHidden', () => {
         const component = renderer.create(<PrefersHomeIndicatorAutoHidden />)
         expect(RNHomeIndicator.autoHidden).toHaveBeenCalled()
