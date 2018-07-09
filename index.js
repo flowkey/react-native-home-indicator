@@ -47,6 +47,13 @@ function updateNativeHomeIndicator({ autoHidden = false }) {
     }
 }
 
+function untestedFUnction() {
+    const x = '123'
+    return x
+}
+
+untestedFUnction()
+
 
 // keep this for backwards compatibility
 const PrefersHomeIndicatorAutoHidden = () => <HomeIndicator autoHidden />
