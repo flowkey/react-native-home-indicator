@@ -1,4 +1,8 @@
+.DS_Store
 node_modules
 *.test.js
-.eslintrc.js
+.eslintrc
+.eslintignore
+.babelrc
 package-lock.json
+coverage
