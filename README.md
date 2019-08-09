@@ -10,7 +10,8 @@ A declarative approach for hiding the iPhone X Home Indicator in react-native.
 `npm install react-native-home-indicator --save`
 
 #### 2. Link library
-follow the [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
+If you're using RN >= 0.60.0 just go run `pod install` inside the `ios`-directory.
+To install in projects using RN < 0.60.0 follow the [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
 
 #### 3. Changes in Appdelegate.m
 
