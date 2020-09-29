@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
 
   s.source_files = "ios/**/*.{h,m}"
-  s.dependency "React"
+  s.dependency "React-Core"
 end
