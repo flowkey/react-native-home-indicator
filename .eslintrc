@@ -21,6 +21,7 @@
         "function-paren-newline": ["off"],
         "func-names": ["error", "never"],
         "indent": [1, 4, { "SwitchCase": 1 }],
+        "react/sort-comp": "off",
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-filename-extension": ["error", {"extensions": [".js", ".jsx"]}],
