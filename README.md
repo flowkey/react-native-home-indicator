@@ -11,7 +11,7 @@ A declarative approach for hiding the iPhone X Home Indicator in react-native.
 
 #### 2. Link library
 If you're using RN >= 0.60.0 just go run `pod install` inside the `ios`-directory.
-To install in projects using RN < 0.60.0 follow the [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
+To install in projects using RN < 0.60.0 follow the [manual linking steps](https://reactnative.dev/docs/linking-libraries-ios#step-3)
 
 #### 3. Add Header to Search Path
 Because you need to call react-native-home-indicator from native, ensure that you add `"$(SRCROOT)/../node_modules/react-native-home-indicator/ios"` to your Header Search Paths as [described here](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#step-3)
