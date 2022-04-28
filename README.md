@@ -2,16 +2,14 @@
 [![CircleCI](https://circleci.com/gh/flowkey/react-native-home-indicator.svg?style=svg)](https://circleci.com/gh/flowkey/react-native-home-indicator)
 [![codecov](https://codecov.io/gh/flowkey/react-native-home-indicator/branch/master/graph/badge.svg)](https://codecov.io/gh/flowkey/react-native-home-indicator)
 
-A declarative approach for hiding the iPhone X Home Indicator in react-native.
-
+A declarative approach for hiding the [Home Indicator](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design) on iOS/iPadOS devices.
 ## Getting Started
 
 #### 1. Add dependency
 `npm install react-native-home-indicator --save`
 
 #### 2. Link library
-If you're using RN >= 0.60.0 just go run `pod install` inside the `ios`-directory.
-To install in projects using RN < 0.60.0 follow the [manual linking steps](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#manual-linking)
+If you're using RN >= 0.60.0 just run `pod install` as usual
 
 #### 3. Changes in Appdelegate.m
 
