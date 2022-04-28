@@ -1,24 +1,24 @@
 version: 2
 jobs:
-  build:
-    working_directory: ~/project
-    docker:
-      - image: circleci/node:12
-    steps:
-      - checkout
-      - restore_cache:
-          key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
+    build:
+        working_directory: ~/project
+        docker:
+            - image: circleci/node:16
+        steps:
+            - checkout
+            - restore_cache:
+                  key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
 
-      - run: npm i
+            - run: npm i
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
 
-      - run: npm run eslint
-      - run:
-          name: "test and upload coverage"
-          command: npm run test && npm run codecov
-          environment:
-            - CODECOV_TOKEN: "155bb51c-360b-4193-a77f-d4bb1f37ca96" 
+            - run: npm run eslint
+            - run:
+                  name: "test and upload coverage"
+                  command: npm run test && npm run codecov
+                  environment:
+                      - CODECOV_TOKEN: "155bb51c-360b-4193-a77f-d4bb1f37ca96"
