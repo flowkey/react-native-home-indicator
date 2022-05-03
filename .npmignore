@@ -4,6 +4,5 @@ node_modules
 .eslintrc
 .eslintignore
 .babelrc
-package-lock.json
 coverage
 tsconfig.json

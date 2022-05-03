@@ -1,8 +1,8 @@
 {
     "name": "react-native-home-indicator",
-    "version": "0.2.8",
-    "description": "A declarative approach for hiding the iPhone X Home Indicator in react-native",
-    "main": "index.js",
+    "version": "0.2.9",
+    "description": "A declarative approach for hiding the Apple Home Indicator in react-native",
+    "main": "index.tsx",
     "scripts": {
         "test": "jest --coverage",
         "test-watch": "jest --watch",
@@ -14,7 +14,8 @@
         "react-native",
         "Home Indicator",
         "prefersHomeIndicatorAutoHidden",
-        "iphoneX"
+        "iphoneX",
+        "Safe Area"
     ],
     "repository": {
         "type": "git",
