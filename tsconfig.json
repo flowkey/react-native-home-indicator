@@ -12,6 +12,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "target": "esnext",
+    "baseUrl": "."
   },
   "include": ["index.tsx"],
   "exclude": [

@@ -1,6 +1,12 @@
 module.exports = {
-    extends: ["@react-native-community", "eslint:recommended", "prettier"],
-    plugins: ["import"],
+    parser: "@typescript-eslint/parser",
+    extends: ["@react-native-community", "plugin:@typescript-eslint/recommended", "prettier"],
+    plugins: ["import", "@typescript-eslint"],
+    settings: {
+        "import/resolver": {
+            typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
+        },
+    },
     rules: {
         "no-param-reassign": ["error", { props: true }],
         "no-debugger": "error",

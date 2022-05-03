@@ -10,16 +10,14 @@ export const HomeIndicator = (props: Props) => {
     useEffect(() => {
         if (!isIos) return;
 
-        const { autoHidden } = props;
         propsHistory.push(props);
-
-        updateNativeHomeIndicator({ autoHidden });
+        updateNativeHomeIndicator({ autoHidden: props.autoHidden });
 
         return () => {
             if (!isIos) return;
 
-            const { autoHidden } = popAndGetPreviousProps();
-            updateNativeHomeIndicator({ autoHidden });
+            const previousProps = popAndGetPreviousProps();
+            updateNativeHomeIndicator({ autoHidden: previousProps.autoHidden });
         };
     });
 
