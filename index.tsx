@@ -24,8 +24,17 @@ export const HomeIndicator = (props: Props) => {
     return null;
 };
 
-const propsHistory: Props[] = [];
-function popAndGetPreviousProps() {
+let propsHistory: Props[] = [];
+
+export function clearPropsHistory() {
+    propsHistory = [];
+}
+
+export function getPropsHistory() {
+    return [...propsHistory];
+}
+
+export function popAndGetPreviousProps() {
     propsHistory.pop();
     return propsHistory[propsHistory.length - 1] || { autoHidden: false };
 }
