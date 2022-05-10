@@ -16,6 +16,7 @@ jobs:
                       - node_modules
                   key: node_modules-{{ checksum "package-lock.json" }}-{{ checksum  "package.json" }}
 
+            - run: npm run tsc
             - run: npm run eslint
             - run:
                   name: "test and upload coverage"
