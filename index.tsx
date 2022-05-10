@@ -19,7 +19,7 @@ export const HomeIndicator = (props: Props) => {
             const previousProps = popAndGetPreviousProps();
             updateNativeHomeIndicator({ autoHidden: previousProps.autoHidden });
         };
-    });
+    }, []);
 
     return null;
 };
