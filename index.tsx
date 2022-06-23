@@ -19,7 +19,7 @@ export const HomeIndicator = (props: Props) => {
             const previousProps = popAndGetPreviousProps();
             updateNativeHomeIndicator({ autoHidden: previousProps.autoHidden });
         };
-    }, []);
+    }, [props.autoHidden]);
 
     return null;
 };
@@ -39,7 +39,7 @@ export function popAndGetPreviousProps() {
     return propsHistory[propsHistory.length - 1] || { autoHidden: false };
 }
 
-function updateNativeHomeIndicator({ autoHidden = false }: { autoHidden: boolean }) {
+export function updateNativeHomeIndicator({ autoHidden = false }: { autoHidden: boolean }) {
     if (autoHidden) {
         RNHomeIndicator.autoHidden();
     } else {
