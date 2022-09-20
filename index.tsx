@@ -6,7 +6,7 @@ const isIos = Platform.OS === "ios";
 
 type Props = { autoHidden: boolean };
 
-export const HomeIndicator = (props: Props) => {
+export const HomeIndicator: React.FC<Props> = (props) => {
     useEffect(() => {
         if (!isIos) return;
 
